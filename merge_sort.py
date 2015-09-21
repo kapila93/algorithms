@@ -22,10 +22,12 @@ def split_sort(some_list):
 def split_list(some_list):
 	half_list_length = len(some_list) / 2
 	left_list = []
-	
+
 	for index in range(0, half_list_length):
 		left_list.append(some_list[index])
 		index += 1
+
+	return left_list
 
 def merge_sort(some_list):
 	length_of_list = len(some_list)
