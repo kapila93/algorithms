@@ -32,7 +32,14 @@ def merge(a_list, left_list, right_list):
 			j = j + 1
 	return a_list
 
-list_of_numbers = [4 , 2, 52, 24, 34, 12, 42, 57, 23, 135, 34, 43]
-print list_of_numbers
-mergeSort(list_of_numbers)
-print list_of_numbers
+
+print "Input list of numbers in the format x y z ... n"
+number_input = raw_input()
+a_list = map(int, number_input.split())
+print a_list
+mergeSort(a_list)
+print a_list
+# list_of_numbers = [4 , 2, -4, 52, 4.8, 24, 34, 12, 42, 39434, 57, 23, 135, 34, 43]
+# print list_of_numbers
+# mergeSort(list_of_numbers)
+# print list_of_numbers
