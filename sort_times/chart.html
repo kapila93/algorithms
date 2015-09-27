@@ -1,0 +1,78 @@
+ <!DOCTYPE HTML>
+<html>
+
+<head>  
+	<script type="text/javascript">
+	window.onload = function () {
+		var chart = new CanvasJS.Chart("chartContainer",
+		{
+
+			title:{
+				text: "Insert Sort vs Merge Sort",
+				fontSize: 30
+			},
+                        animationEnabled: true,
+			axisX:{
+
+				gridColor: "Silver",
+				tickColor: "silver",
+
+			},                        
+                        toolTip:{
+                          shared:true
+                        },
+			theme: "theme2",
+			axisY: {
+				gridColor: "Silver",
+				tickColor: "silver"
+			},
+			legend:{
+				verticalAlign: "center",
+				horizontalAlign: "right"
+			},
+			data: [
+			{        
+				type: "line",
+				showInLegend: true,
+				lineThickness: 2,
+				name: "Insert Sort",
+				markerType: "square",
+				color: "#F08080",
+				dataPoints: [{ x: 1, y: 0.0031 },{ x: 2, y: 0.0029 },{ x: 4, y: 0.0029 },{ x: 8, y: 0.005 },{ x: 16, y: 0.0129 },{ x: 32, y: 0.0548 },{ x: 64, y: 0.164 },{ x: 128, y: 0.7629 },{ x: 256, y: 2.7871 },{ x: 512, y: 11.2779 },{ x: 1024, y: 39.8059 },{ x: 2048, y: 156.61 },{ x: 4096, y: 614.584 },{ x: 8192, y: 2484.2219 },{ x: 16384, y: 12360.7531 },{ x: 32768, y: 53561.6469 } ]
+			},
+			{        
+				type: "line",
+				showInLegend: true,
+				name: "Merge Sort",
+				color: "#20B2AA",
+				lineThickness: 2,
+
+				dataPoints: [{ x: 1, y: 0.001 },{ x: 2, y: 0.0038 },{ x: 4, y: 0.0069 },{ x: 8, y: 0.015 },{ x: 16, y: 0.0319 },{ x: 32, y: 0.0689 },{ x: 64, y: 0.149 },{ x: 128, y: 0.3221 },{ x: 256, y: 0.726 },{ x: 512, y: 1.514 },{ x: 1024, y: 3.2589 },{ x: 2048, y: 6.86 },{ x: 4096, y: 14.643 },{ x: 8192, y: 31.1041 },{ x: 16384, y: 83.38 },{ x: 32768, y: 180.2571 } ]
+			}
+
+			
+			],
+          legend:{
+            cursor:"pointer",
+            itemclick:function(e){
+              if (typeof(e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+              	e.dataSeries.visible = false;
+              }
+              else{
+                e.dataSeries.visible = true;
+              }
+              chart.render();
+            }
+          }
+		});
+
+chart.render();
+}
+</script>
+<script type="text/javascript" src="canvasJS/canvasjs.min.js"></script>
+</head>
+<body>
+	<div id="chartContainer" style="height: 300px; width: 100%;">
+	</div>
+</body>
+</html> 
