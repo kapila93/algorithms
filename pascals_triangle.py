@@ -34,7 +34,6 @@ def pascalrow(row, pwr_count, power):
 
 pascal(10)
 
-
 # 0 = 0
 # 1 = 0 + 1
 # 2 = 1 + 2
